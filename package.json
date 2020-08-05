@@ -1,0 +1,28 @@
+{
+  "name": "english-for-kids",
+  "version": "1.0.0",
+  "description": "javascript",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/inq666-RS2020Q1.git"
+  },
+  "keywords": [
+    "javascript",
+    "webpack",
+    "css",
+    "html"
+  ],
+  "author": "Denis Denisov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/inq666-RS2020Q1/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/inq666-RS2020Q1#readme"
+}

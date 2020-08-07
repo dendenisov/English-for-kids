@@ -1,0 +1,28 @@
+body {
+    margin: 0 auto;
+  
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+  
+    background: linear-gradient(270deg, #ffffff, #c8fff3, #fdddfc);
+    background-size: 600% 600%;
+  
+    animation: background 12s ease infinite;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 0 0 10px;
+  }

@@ -81,3 +81,192 @@ body {
   
     transition: color 0.2s linear;
   }
+
+  .active-link {
+    color: rgb(71, 255, 209);
+  
+    transform: scale(1.3);
+  }
+  
+  .nav-link:hover {
+    color: rgb(96, 224, 214);
+  }
+  
+  /*BURGER*/
+  .menu-icon {
+    position: relative;
+    top: 30px;
+    left: 20px;
+    z-index: 10;
+  
+    width: 50px;
+    height: 42px;
+  
+    cursor: pointer;
+  }
+  
+  .menu-icon-line,
+  .menu-icon-line::after,
+  .menu-icon-line::before {
+    position: absolute;
+    top: 50%;
+  
+    width: 50px;
+    height: 6px;
+  
+    background-color: rgb(255, 0, 157);
+    border-radius: 3px;
+  
+    transition: top 0.3s, background 0.2s, transform 0.3s ease;
+  }
+  
+  .menu-icon-line::after {
+    content: "";
+    top: -14px;
+  }
+  
+  .menu-icon-line::before {
+    content: "";
+    top: 14px;
+  }
+  
+  .menu-icon-active {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .menu-icon-active::after {
+    top: 0;
+  
+    transform: rotate(45deg);
+  }
+  
+  .menu-icon-active::before {
+    top: 0;
+  
+    transform: rotate(-45deg);
+  }
+  
+  /*SWITCHER*/
+  #toggle {
+    display: none;
+  }
+  
+  .switch {
+    position: absolute;
+    top: 30px;
+    right: 0;
+  
+    display: inline-block;
+    width: 5em;
+    height: 1.5em;
+    padding-top: 0.175em;
+    padding-left: 1.625em;
+  
+    font-size: 1em;
+    color: #ffffff;
+  
+    background: linear-gradient(rgb(255, 162, 162) 0%, rgb(250, 132, 250) 100%);
+    border-radius: 25px;
+    cursor: pointer;
+  
+    transition: background-color 0.6s, box-shadow 0.3s ease;
+  }
+  
+  
+  .switch:hover {
+    box-shadow: 0 0 15px rgba(243, 110, 255, 0.527);
+  }
+  
+  .switch::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 3px;
+  
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+  
+    background-image: url("images/icons/circle.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+  
+    transition: left 0.3s, transform 2s ease;
+  }
+  
+  .switch:hover::before {
+    transform: rotate(180deg)
+  }
+  
+  #toggle:checked + label {
+    padding-left: 0.625em;
+  
+    background-color: rgb(80, 197, 80);
+  }
+  
+  #toggle:checked + label::before {
+    left: 3.40em;
+  }
+  
+  /*CATEGORY-CARDS*/
+  .container {
+    position: relative;
+  
+    margin-top: 50px;
+  }
+  
+  .main-page,
+  .cards-wrapper,
+  .difficult-cards {
+    position: relative;
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .main-page {
+    padding-top: 55px;
+  }
+  
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 330px;
+    margin: 15px;
+  
+    text-decoration: none;
+  
+    background: linear-gradient(rgb(255, 162, 162) 0%, rgb(238, 126, 238) 40%, #ffffff 30%);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  
+    transition: box-shadow 0.2s linear;
+  }
+  
+  .category-card:hover,
+  .word-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  }
+  
+  .category-card-image {
+    width: 200px;
+    height: 200px;
+  
+    background-image: url("images/category/Actions.jpg");
+    background-position: center;
+    background-size: cover;
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+  }
+  
+  .category-card > h2 {
+    font-weight: normal;
+    font-size: 35px;
+    color: #000000;
+  }

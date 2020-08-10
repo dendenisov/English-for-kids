@@ -270,3 +270,378 @@ body {
     font-size: 35px;
     color: #000000;
   }
+
+  /* WORD CARD */
+.word-card {
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+  margin: 15px;
+
+  background-image: url("images/actions/sing.jpg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: perspective(1000px);
+  cursor: pointer;
+
+  transition: box-shadow 0.2s, transform 1s ease;
+}
+
+.cards-page > h2 {
+  font-size: 1em;
+  left: 90px;
+  top: -60px;
+  position: absolute;
+  color: rgba(58, 58, 58, 0.534)
+}
+
+.word-control-front,
+.word-control-back {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 40px;
+  padding-top: 5px;
+
+  text-align: center;
+
+  background-color: #ffffff;
+  transform: perspective(1000px);
+  backface-visibility: hidden;
+
+  transition: transform 1s ease;
+}
+
+.word-control-back {
+  transform: rotateY(180deg);
+}
+
+.word-control-back > .card-title {
+  transform: scale(-1, 1);
+}
+
+.card-title {
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.rotate {
+  position: absolute;
+  right: 8px;
+  bottom: 2px;
+
+  width: 37px;
+  height: 37px;
+
+  background-image: url("images/icons/rotate.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  transition: transform 1s, opacity 0.8s ease;
+}
+
+.rotate:hover {
+  transform: rotate(-180deg);
+}
+
+
+/* start & repeat button */
+.start-game {
+  position: absolute;
+  bottom: -70px;
+  z-index: 8;
+
+  display: none;
+  width: 100%;
+  height: 50px;
+
+  font-size: 40px;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background: linear-gradient(45deg, rgb(245, 211, 91) 0%, rgb(255, 172, 230) 100%);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  transition: box-shadow 0.3s linear;
+}
+
+.start-game:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+}
+
+.repeat {
+  position: absolute;
+  bottom: -100px;
+  left: 46%;
+
+  display: none;
+  width: 110px;
+  height: 100px;
+
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background: linear-gradient(45deg, rgb(245, 211, 91) 0%, rgb(255, 172, 230) 100%);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  transition: box-shadow 0.3s linear;
+}
+
+.repeat:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+}
+
+.repeat-btn {
+  transition: transform 2s linear;
+}
+
+.repeat-btn:hover {
+  transform: rotate(360deg);
+}
+
+.correctly-word {
+  border: 10px solid green;
+  border-radius: 10px;
+  opacity: 0.3;
+}
+
+.correctly-word:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*MODAL WINDOW*/
+.win-game,
+.lose-game {
+  position: fixed;
+  z-index: 999;
+
+  display: none;
+  width: 100vw;
+  height: 100vh;
+
+  text-align: center;
+
+  background-color: #ffffff;
+}
+
+.win-game p,
+.lose-game p {
+  font-weight: bold;
+  font-size: 2.5em;
+  color: rgb(255, 87, 233);
+  text-transform: uppercase;
+}
+
+.win-game img,
+.lose-game img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+
+/*START BLOCK*/
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  min-height: 55px;
+  overflow: hidden;
+
+  visibility: hidden;
+}
+
+.star-win,
+.star-lose {
+  min-width: 55px;
+  min-height: 55px;
+
+  background-image: url("images/icons/star-win.svg");
+}
+
+.star-lose {
+  background-image: url("images/icons/star-lose.svg");
+}
+
+/*STATISTICS BUTTON*/
+.statistics {
+  text-align: center;
+}
+
+.reset-statistics,
+.repeat-difficult,
+.back-statisctics {
+  width: 80%;
+  height: 50px;
+
+  font-size: 0.8em;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  transition: box-shadow 0.5s, transform 0.3s linear;
+}
+
+.reset-statistics {
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  background: linear-gradient(45deg, rgb(0, 255, 242) 0%, rgb(70, 135, 255) 50%, rgb(255, 172, 230) 100%);
+}
+
+.repeat-difficult {
+  background: linear-gradient(45deg, rgb(255, 68, 68) 0%, rgb(206, 46, 255) 50%, rgb(255, 238, 0) 100%);
+}
+
+.back-statisctics {
+  display: none;
+  margin: 20px auto 0;
+
+  background: linear-gradient(rgb(255, 162, 162) 0%, rgb(238, 126, 238) 40%);
+}
+
+.reset-statistics:hover,
+.repeat-difficult:hover,
+.back-statisctics:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.reset-statistics:active,
+.repeat-difficult:active,
+.back-statisctics:active {
+  transform: scale(0.95);
+}
+
+/* STATISTICS TABLE*/
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+  font-size: 0.6em;
+}
+
+caption {
+  font-size: 3em;
+}
+
+th,
+td {
+  padding: 5px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  border-right: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+th {
+  background-color: rgba(255, 0, 179, 0.158);
+  border-radius: 20px;
+  cursor: pointer;
+
+  transition: box-shadow 0.2s, background 0.3s linear;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+th:hover {
+  background-color: rgba(255, 0, 179, 0.493);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+th:active {
+  background-color: rgba(168, 0, 118, 0.397);
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+.no-mistakes {
+  display: none;
+  margin-top: 15%;
+
+  font-size: 3em;
+  text-align: center;
+  color: #0000004f;
+}
+
+.difficult-cards {
+  align-items: flex-end;
+  min-height: 450px;
+}
+
+/*MEADIA*/
+@media (max-width: 1019px) {
+  body {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 25px;
+  }
+
+  table {
+    font-size: 0.38em;
+  }
+}
+
+@media (max-width: 460px) {
+  .reset-statistics,
+  .repeat-difficult,
+  .back-statisctics {
+    height: 30px;
+
+    font-size: 0.5em;
+  }
+
+  table {
+    font-size: 0.23em;
+  }
+
+  .nav {
+    width: 300px;
+  }
+
+  .nav-link {
+    font-size: 27px;
+  }
+
+  .cards-page > h2 {
+    top: -20px;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 20px;
+  }
+
+  .reset-statistics,
+  .repeat-difficult,
+  .back-statisctics {
+    height: 20px;
+
+    font-size: 0.5em;
+  }
+
+  table {
+    font-size: 0.2em;
+  }
+}

@@ -15,6 +15,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "linebreak-style": 0,
+    "no-unused-vars": 0
   },
 };
 
